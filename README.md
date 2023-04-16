@@ -1,0 +1,3 @@
+# Angular ESLint
+
+It will be ready soon...
