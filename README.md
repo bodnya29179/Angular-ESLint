@@ -200,7 +200,7 @@ Here's a breakdown of each property in the `.prettierrc` file and its purpose:
   ####
   **Rationale:** The selected value is **optional**. It depends on the code style of your team.
   **Example**:
-  ```angular2html
+  ```html
   // ✔️ Good
   <button
     class="some-class"
@@ -211,7 +211,7 @@ Here's a breakdown of each property in the `.prettierrc` file and its purpose:
   </button>
   ```
 
-  ```angular2html
+  ```html
   // ✔️ Also good
   <button
     class="some-class"
