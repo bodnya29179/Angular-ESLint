@@ -78,6 +78,7 @@ Here's a breakdown of each property in the `.prettierrc` file and its purpose:
   ####
   **Rationale:** By choosing single quotes, we adhere to a common convention in JavaScript and maintain consistency
   throughout the codebase.
+  ####
   **Example**:
   ```js
   // ❌ Bad
@@ -96,6 +97,7 @@ Here's a breakdown of each property in the `.prettierrc` file and its purpose:
   **Description:** Specifies whether to use tabs (`true`) or spaces (`false`) for indentation.
   ####
   **Rationale:** Opting for spaces instead of tabs promotes consistent alignment across different editors and platforms.
+  ####
   **Example**:
   ```js
   // ❌ Bad
@@ -119,6 +121,7 @@ Here's a breakdown of each property in the `.prettierrc` file and its purpose:
   ####
   **Rationale:** A value of `2` spaces strikes a balance between preserving indentation depth and minimizing horizontal
   space usage.
+  ####
   **Example**:
   ```js
   // ❌ Bad
@@ -142,6 +145,7 @@ Here's a breakdown of each property in the `.prettierrc` file and its purpose:
   ####
   **Rationale:** Setting it to true enforces the use of semicolons, which aids in preventing potential issues with
   automatic semicolon insertion.
+  ####
   **Example**:
   ```js
   // ❌ Bad
@@ -161,6 +165,7 @@ Here's a breakdown of each property in the `.prettierrc` file and its purpose:
   ####
   **Rationale:** Enabling this property by setting it to `true` enhances code readability by adding spaces between
   brackets and their contents.
+  ####
   **Example**:
   ```js
   // ❌ Bad
@@ -180,6 +185,7 @@ Here's a breakdown of each property in the `.prettierrc` file and its purpose:
   ####
   **Rationale:** The `"as-needed"` setting quotes property names only when necessary, reducing visual clutter and
   improving code readability.
+  ####
   **Example**:
   ```js
   // ❌ Bad
@@ -199,6 +205,7 @@ Here's a breakdown of each property in the `.prettierrc` file and its purpose:
   of being alone on the next line (does not apply to self-closing elements).
   ####
   **Rationale:** The selected value is **optional**. It depends on the code style of your team.
+  ####
   **Example**:
   ```html
   // ✔️ Good
@@ -231,6 +238,7 @@ Here's a breakdown of each property in the `.prettierrc` file and its purpose:
   However, when Prettier removes parentheses, it becomes harder to add type annotations, extra arguments or default
   values as well as making other changes. Consistent use of parentheses provides a better developer experience when
   editing real codebases, which justifies the default value for the option.
+  ####
   **Example**:
   ```js
   // ❌ Bad
@@ -268,6 +276,7 @@ Here's a breakdown of each property in the `.prettierrc` file and its purpose:
   codebase concurrently. Finally, it promotes a consistent style and avoids debates over whether to include or omit the
   trailing comma in different scenarios. By adopting the `"es5"` setting, we ensure compatibility with ECMAScript 5 and
   leverage these advantages to enhance the maintainability and collaboration aspects of our codebase.
+  ####
   **Example**:
   ```js
   // ❌ Bad
@@ -295,6 +304,7 @@ Here's a breakdown of each property in the `.prettierrc` file and its purpose:
   ####
   **Rationale:** With "ignore", whitespace in HTML files is disregarded, avoiding unnecessary diffs and promoting
   consistency.
+  ####
   **Example**:
   ```html
   // ❌ Bad
