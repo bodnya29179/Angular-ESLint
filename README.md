@@ -283,7 +283,7 @@ Here's a breakdown of each property in the `.prettierrc` file and its purpose:
 
 - ### `trailingComma`
 
-  **Value:** `"es5"`.
+  **Value:** `"all"`.
   ####
   **Description:** Specifies the use of trailing commas in multiline lists.
   ####
@@ -291,7 +291,7 @@ Here's a breakdown of each property in the `.prettierrc` file and its purpose:
   removing items from the list, as each item is followed by a comma, making the version control diffs cleaner and more
   manageable. Secondly, it helps prevent formatting-related merge conflicts when multiple developers work on the same
   codebase concurrently. Finally, it promotes a consistent style and avoids debates over whether to include or omit the
-  trailing comma in different scenarios. By adopting the `"es5"` setting, we ensure compatibility with ECMAScript 5 and
+  trailing comma in different scenarios. By adopting the `"all"` setting, we ensure compatibility and
   leverage these advantages to enhance the maintainability and collaboration aspects of our codebase.
   ####
   **Example**:
@@ -365,3 +365,79 @@ Here's a breakdown of each property in the `.prettierrc` file and its purpose:
 By customizing these properties in the `.prettierrc` file, you establish a consistent code formatting style across
 your project, enhancing readability and maintainability. Feel free to modify these settings based on your specific
 project requirements and personal preferences.
+
+### Disadvantages
+
+Despite its many advantages, Prettier, the code formatting tool, is not without its limitations. While Prettier excels
+at enforcing a consistent and opinionated code style, there are certain scenarios where its behavior may not align with
+specific project requirements or coding conventions. In such cases, Prettier's rigid formatting rules can present
+challenges or conflicts that developers need to be aware of. Let's explore some examples where Prettier may encounter
+difficulties or produce unexpected results.
+
+```js
+// 😀 Before formatting
+beforeEach(
+  waitForAsync(() => {
+    TestBed.configureTestingModule({...});
+  })
+);
+```
+
+```js
+// 😒 After formatting
+beforeEach(waitForAsync(() => {
+  TestBed.configureTestingModule({...});
+}));
+```
+
+###
+```js
+// 😀 Before formatting
+facadeService.someMethodWithLongName = jasmine.createSpy('someMethodWithLongName')
+  .and.callThrough();
+```
+
+```js
+// 😒 After formatting
+facadeService.someMethodWithLongName = jasmine
+  .createSpy('someMethodWithLongName')
+  .and.callThrough();
+```
+
+###
+```js
+// 😀 Before formatting
+const result = exampleArray?.some((item) => !!Object.keys(this.facadeService.someMethod(item.id) || {}).length);
+```
+
+```js
+// 🤔 Expectation
+const result = exampleArray?.some((item) => {
+  return !!Object.keys(this.facadeService.someMethod(item.id) || {}).length;
+});
+```
+
+```js
+// 😒 After formatting
+const result = exampleArray?.some(
+  (item) => 
+    !!Object.keys(this.facadeService.someMethod(item.id) || {}).length
+);
+```
+
+###
+```html
+// 😀 Before formatting
+<app-some-component
+  class="col-{{ index + 1 }} row-{{ index + 1 }} {{ backgroundColor }} border border-transparent"
+</app-some-component>
+```
+
+```html
+// 😒 After formatting
+<app-some-component
+  class="col-{{ index + 1 }} row-{{
+    index + 1
+  }} {{ backgroundColor }} border border-transparent"
+</app-some-component>
+```
