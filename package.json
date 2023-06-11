@@ -4,7 +4,8 @@
   "scripts": {
     "start": "ng serve",
     "build": "ng build",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "prettify-all": "prettier --write"
   },
   "private": true,
   "dependencies": {
