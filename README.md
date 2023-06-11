@@ -390,7 +390,7 @@ beforeEach(waitForAsync(() => {
 }));
 ```
 
-###
+##
 ```js
 // 😀 Before formatting
 facadeService.someMethodWithLongName = jasmine.createSpy('someMethodWithLongName')
@@ -404,7 +404,7 @@ facadeService.someMethodWithLongName = jasmine
   .and.callThrough();
 ```
 
-###
+##
 ```js
 // 😀 Before formatting
 const result = exampleArray?.some((item) => !!Object.keys(this.facadeService.someMethod(item.id) || {}).length);
@@ -425,7 +425,7 @@ const result = exampleArray?.some(
 );
 ```
 
-###
+##
 ```html
 // 😀 Before formatting
 <app-some-component
