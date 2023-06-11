@@ -264,6 +264,23 @@ Here's a breakdown of each property in the `.prettierrc` file and its purpose:
   exampleArray.forEach((item) => /* Some actions */);
   ```
 
+  ####
+  **Disadvantages:** The `"arrowParens": "always"` configuration wraps the body of a callback function in parentheses,
+  it can be seen as a potential drawback when it comes to the ESLint
+  rule [`no-return-assign`](https://eslint.org/docs/rules/no-return-assign).
+
+  The only two options for this rule are to allow when parenthesis are _present_ or _disallow always_.
+
+  ```js
+  // 😀 Before formatting
+  exampleArray.forEach((item) => this.someField = item);
+  ```
+
+  ```js
+  // 😒 After formatting
+  exampleArray.forEach((item) => (this.someField = item));
+  ```
+
 - ### `trailingComma`
 
   **Value:** `"es5"`.
