@@ -430,7 +430,7 @@ const result = exampleArray?.some(
 // 😀 Before formatting
 <app-some-component
   class="col-{{ index + 1 }} row-{{ index + 1 }} {{ backgroundColor }} border border-transparent"
-</app-some-component>
+></app-some-component>
 ```
 
 ```html
@@ -439,5 +439,5 @@ const result = exampleArray?.some(
   class="col-{{ index + 1 }} row-{{
     index + 1
   }} {{ backgroundColor }} border border-transparent"
-</app-some-component>
+></app-some-component>
 ```
